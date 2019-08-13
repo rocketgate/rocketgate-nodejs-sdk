@@ -28,7 +28,7 @@ describe('perform generateXsell', function() {
         
         request.customerFirstName = "Joe";
         request.customerLastName = "JSTester";
-        request.email = "nodetest2222@fakedomain.com";
+        request.email = "nodetest@fakedomain.com";
 
 
         //	Setup test parameters in the service and request.
