@@ -15,7 +15,7 @@
         }
     ],
     "scripts": {
-        "test": "nyc --reporter=html --reporter=text --check-coverage --lines=77 --statements=77 mocha"
+        "test": "nyc --reporter=html --reporter=text --check-coverage --lines=77 --statements=77 mocha --timeout 5000"
     },
     "keywords": [
         "rocketgate",
