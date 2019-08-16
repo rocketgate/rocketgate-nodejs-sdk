@@ -5,12 +5,12 @@
         "ROCKETGATE_READ_TIMEOUT": 90,
         "ROCKETGATE_PROTOCOL": "https",
         "ROCKETGATE_PORTNO": "443",
-        "ROCKETGATE_USER_AGENT": "RG Client NodeJS K2.0",
+        "ROCKETGATE_USER_AGENT": "RG Client NodeJS K2.1",
         "LIVE_HOST": "gw.rocketgate.com",
         "LIVE_HOST_16": "gateway-16.rocketgate.com",
         "LIVE_HOST_17": "gateway-17.rocketgate.com",
         "TEST_HOST": "dev-gateway.rocketgate.com",
-        "VERSION_NUMBER": "K2.0"
+        "VERSION_NUMBER": "K2.1"
     },
     "responseSettings": {
         "VERSION_INDICATOR": "version",
