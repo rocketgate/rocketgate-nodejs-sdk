@@ -14,7 +14,7 @@ describe('perform generateXsell', function() {
         request.merchantPassword = "testpassword";
         request.merchantCustomerID = time + ".JSTest";
         request.merchantInvoiceID = time + "NODE.test";
-        
+
         request.currency = "USD";
         request.amount = "3.00";                // bill $3.00 now
         request.rebillStart = "3";              // Rebill in 3x days
@@ -25,7 +25,7 @@ describe('perform generateXsell', function() {
         request.expireMonth = "02";
         request.expireYear = "2020";
         request.cvv2 = "999";
-        
+
         request.customerFirstName = "Joe";
         request.customerLastName = "JSTester";
         request.email = "nodetest@fakedomain.com";
@@ -49,14 +49,14 @@ describe('perform generateXsell', function() {
         });
     });
 
-        // 
+        //
         // Update Sticky MID
 	    //
-	    //  This would normally be two separate processes, 
+	    //  This would normally be two separate processes,
 	    //  but for example's sake is in one process (thus we clear and set a new GatewayRequest object)
 	    //  The key values required are MERCHANT_CUSTOMER_ID  and MERCHANT_INVOICE_ID
         //
-        
+
         // Setup New request for Xsell transaction
         request2 = new Request();
 
@@ -70,9 +70,9 @@ describe('perform generateXsell', function() {
         request2.rebillStart = "4";             // Rebill in 4x days
         request2.rebillAmount = "7.99";         // Rebill at $7.99
         request2.rebilFrequency = "MONTHLY";    // Ongoing renewalas monthly
-   
+
     it ('should perform a Xsell', function (done) {
-        service.GenerateXsell(request2, {}, function (results, request, response) {
+        service.generateXsell(request2, {}, function (results, request, response) {
             results.should.not.equal(null);
             response[responseSettings.RESPONSE_CODE].should.equal('0');
             done();

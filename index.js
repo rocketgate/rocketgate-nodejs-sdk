@@ -12,10 +12,6 @@ function RocketgateAPI(options) {
     var publicAPI = {};
 
     function performAuthOnly(params, callback) {
-	// @TODO Shouldn't throw errors but rather percolate them through the callback
-	if (is.not.existy(params) || is.not.object(params)) {
-		throw new Error('RocketgateAPI performAuthOnly requires `params` Object!');
-        }
         if (params) {
             async.waterfall([
                 function (callback) {
@@ -96,6 +92,32 @@ function RocketgateAPI(options) {
         }
     }
 
+    function generateXsell(params, callback) {
+        if (params) {
+            async.waterfall([
+                    function (callback) {
+                        _setupRequest(params, function (err, request) {
+                            callback(err, request);
+                        });
+                    },
+                    function(request, callback) {
+                        Service.generateXsell(request, {}, function(results, request, response) {
+                            callback(null, results, request, response);
+                        });
+                    },
+                    function (results, request, response, callback) {
+                        _parseBillerResponse(response, function(response) {
+                            callback(null, results, request, response);
+                        });
+                    }
+                ],
+                function (err, results, request, response) {
+                    callback(results, request, response);
+                });
+        } else {
+            throw new Error('RocketgateAPI performXsell requires `params` Object!');
+        }
+    }
 
     function performCredit(params, callback) {
         if (params) {
@@ -299,6 +321,7 @@ function RocketgateAPI(options) {
         performRebillUpdate: performRebillUpdate,
         performTicket: performTicket,
         performVoid: performVoid,
+        generateXsell: generateXsell,
         createHostedPageUrl: createHostedPageUrl
     };
 
