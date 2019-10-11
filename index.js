@@ -1,5 +1,5 @@
 var async = require('async'),
-    HostedPage = require('./lib/hostedPage'),
+    hashedUrls = require('./lib/hashedUrls'),
     Service = require('./lib/gatewayService'),
     Request = require('./lib/gatewayRequest'),
     responseSettings = require('./config/config').responseSettings,
@@ -282,7 +282,13 @@ function RocketgateAPI(options) {
     }
 
     function createHostedPageUrl(params, callback) {
-        HostedPage.createHostedPageUrl(params, function (err, result) {
+        hashedUrls.createHostedPageUrl(params, function (err, result) {
+            callback(err, result);
+        });
+    }
+
+    function createEmbeddedFieldsScript(params, callback) {
+        hashedUrls.createEmbeddedFieldsScript(params, function (err, result) {
             callback(err, result);
         });
     }
@@ -322,10 +328,11 @@ function RocketgateAPI(options) {
         performTicket: performTicket,
         performVoid: performVoid,
         generateXsell: generateXsell,
+        createEmbeddedFieldsScript: createEmbeddedFieldsScript,
         createHostedPageUrl: createHostedPageUrl
     };
 
     return publicAPI;
 }
 
-var exports = module.exports = RocketgateAPI();
+module.exports = RocketgateAPI();
