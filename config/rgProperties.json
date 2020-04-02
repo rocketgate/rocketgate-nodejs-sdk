@@ -6,7 +6,7 @@
         "ROCKETGATE_PROTOCOL": "https",
         "ROCKETGATE_PORTNO": "443",
         "ROCKETGATE_USER_AGENT": "RG Client NodeJS K2.1",
-        "LIVE_HOST": "gw.rocketgate.com",
+        "LIVE_HOST": "gateway.rocketgate.com",
         "LIVE_HOST_16": "gateway-16.rocketgate.com",
         "LIVE_HOST_17": "gateway-17.rocketgate.com",
         "TEST_HOST": "dev-gateway.rocketgate.com",
