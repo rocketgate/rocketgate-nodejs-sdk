@@ -11,6 +11,14 @@ The Gateway Service communicates with servers within the RocketGate network to p
 * npm install
 * mocha
 
+## Docs
+There is inline documentation below. Additional docs related to this SDK are located at:
+
+1. GatewayService: https://help.rocketgate.com/support/solutions/articles/28000018238-gatewayservice
+2. GatewayRequest: https://help.rocketgate.com/support/solutions/articles/28000018237-gatewayrequest
+3. GatewayResponse: https://help.rocketgate.com/support/solutions/articles/28000018236-gatewayresponse
+4. GatewayResponse Error / Decline Codes: https://help.rocketgate.com/support/solutions/articles/28000018169-gatewayresponse-error-decline-codes
+
 ## Gateway Service Methods
 
 Most methods accept `request`, `response`, and `callback` parameters.
@@ -124,30 +132,6 @@ Set timeout for RocketGate server response.
 Turn on/off testing mode. In testing mode, transactions are sent to RocketGate test servers.
 * **Required Parameters**
     * bool (true = test mode on)
-    * callback
-
-### setHost  
-Set the host used by the service.
-* **Required Parameters**
-    * hostName
-    * callback
-
-### setProtocol
-Set the communications protocol used by the service.
-* **Required Parameters**
-    * protocol
-    * callback
-
-### setPortNo
-Set the port number used by the service.
-* **Required Parameters**
-    * portNo
-    * callback
-
-### setServlet
-Set the servlet used by the service.
-* **Required Parameters**
-    * servlet
     * callback
 
 ### setConnectTimeout
@@ -503,8 +487,8 @@ Customer’s username within merchant’s internal system.
 * **required:** no
 
 
-## GatewayRequest Examples
-Following are some examples of the use of the parameters for various types of transactions. Note that the customer ID and original invoice ID are required to perform any modifications to a subscription.
+## Subscription Examples
+Following are some examples of the use of the parameters for various types of subscription actions. Note that the customer ID and original invoice ID are required to perform any modifications to a subscription.
 
 ###Initial subscription purchase
 **Rebilling trial**
