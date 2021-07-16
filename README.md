@@ -253,12 +253,12 @@ Currency of the transaction that is to be processed against the user’s credit 
 **customerFirstName**  
 Cardholder’s first name.  
 * **required:** no
-* **max chars:** 64
+* **max chars:** 32
 
 **customerLastName**  
 Cardholder’s last name.  
 * **required:** no
-* **max chars:** 64
+* **max chars:** 32
 
 **customerPhoneNo**  
 Cardholder’s phone number.  
