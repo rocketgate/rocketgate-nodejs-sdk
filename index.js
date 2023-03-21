@@ -293,6 +293,34 @@ function RocketgateAPI(options) {
         });
     }
 
+
+    function buildPaymentLink(params, callback) {
+        if (params) {
+            async.waterfall([
+                    function (callback) {
+                        _setupRequest(params, function (err, request) {
+                            callback(err, request);
+                        });
+                    },
+                    function(request, callback) {
+                        Service.buildPaymentLink(request, {}, function(results, request, response) {
+                            callback(null, results, request, response);
+                        });
+                    },
+                    function (results, request, response, callback) {
+                        _parseBillerResponse(response, function(response) {
+                            callback(null, results, request, response);
+                        });
+                    }
+                ],
+                function (err, results, request, response) {
+                    callback(results, request, response);
+                });
+        } else {
+            throw new Error('RocketgateAPI buildPaymentLink requires `params` Object!');
+        }
+    }
+
     function _setupRequest(params, callback) {
         var request = new Request();
 
@@ -329,7 +357,8 @@ function RocketgateAPI(options) {
         performVoid: performVoid,
         generateXsell: generateXsell,
         createEmbeddedFieldsScript: createEmbeddedFieldsScript,
-        createHostedPageUrl: createHostedPageUrl
+        createHostedPageUrl: createHostedPageUrl,
+        buildPaymentLink: buildPaymentLink
     };
 
     return publicAPI;

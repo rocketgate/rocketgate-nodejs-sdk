@@ -5,12 +5,12 @@
         "ROCKETGATE_READ_TIMEOUT": 90,
         "ROCKETGATE_PROTOCOL": "https",
         "ROCKETGATE_PORTNO": "443",
-        "ROCKETGATE_USER_AGENT": "RG Client NodeJS K2.1",
+        "ROCKETGATE_USER_AGENT": "RG Client NodeJS K2.2",
         "LIVE_HOST": "gateway.rocketgate.com",
         "LIVE_HOST_16": "gateway-16.rocketgate.com",
         "LIVE_HOST_17": "gateway-17.rocketgate.com",
         "TEST_HOST": "dev-gateway.rocketgate.com",
-        "VERSION_NUMBER": "K2.1"
+        "VERSION_NUMBER": "K2.2"
     },
     "responseSettings": {
         "VERSION_INDICATOR": "version",
@@ -44,7 +44,8 @@
         "TRANSACT_ID": "guidNo",
         "SCRUB_RESULTS": "scrubResults",
         "SETTLED_AMOUNT": "approvedAmount",
-        "SETTLED_CURRENCY": "approvedCurrency"
+        "SETTLED_CURRENCY": "approvedCurrency",
+        "PAYMENT_LINK_URL": "PAYMENT_LINK_URL"
     },
     "gatewayCodes": {
         "responseCodes": {
@@ -141,7 +142,8 @@
             "448": "Rejected - No Active Membership",
             "449": "Rejected - Invalid CVV",
             "451": "Rejected - Invalid Clone Data",
-            "452": "Rejected - Redundant Suspend or Resume"
+            "452": "Rejected - Redundant Suspend or Resume",
+            "462": "Rejected - Invalid Build Payment Link Request"
         }
     }
 }
