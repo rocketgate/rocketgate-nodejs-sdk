@@ -140,6 +140,19 @@ Set the timeout used during connection to the servlet.
     * timeout  (seconds)
     * callback
 
+### buildPaymentLink
+Build a payment link URL which allows the merchant to generate an embeddable link to a RocketGate-hosted processing page that will conduct all of the authorization and 3DS authentication steps (if requested) within the client's browser.
+* **Required GatewayRequest Parameters**
+    * merchantID
+    * merchantPassword
+    * amount
+    * cardHash or cardNo
+    (If both are present, the `cardNo` element takes precedence.)
+        * if cardHash:
+            * merchantCustomerID
+        * if cardNo:
+            * expireMonth
+
 
 ## GatewayRequest Parameters
 An object containing the information for a credit card transaction request that is submitted to the RocketGate network. Details of the transaction, i.e. customer ID, amount, etc., are embedded in the GatewayRequest object by the client application prior to calling a GatewayService transaction method.
