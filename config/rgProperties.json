@@ -5,7 +5,7 @@
         "ROCKETGATE_READ_TIMEOUT": 90,
         "ROCKETGATE_PROTOCOL": "https",
         "ROCKETGATE_PORTNO": "443",
-        "ROCKETGATE_USER_AGENT": "RG Client NodeJS K2.2",
+        "ROCKETGATE_USER_AGENT": "RG Client NodeJS",
         "LIVE_HOST": "gateway.rocketgate.com",
         "LIVE_HOST_16": "gateway-16.rocketgate.com",
         "LIVE_HOST_17": "gateway-17.rocketgate.com",
