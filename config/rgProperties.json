@@ -1,6 +1,6 @@
 {
     "serviceSettings": {
-        "ROCKETGATE_SERVLET": "/gateway/servlet/ServiceDispatcherAccess",
+        "ROCKETGATE_SERVLET": "gateway/servlet/ServiceDispatcherAccess",
         "ROCKETGATE_CONNECT_TIMEOUT": 10,
         "ROCKETGATE_READ_TIMEOUT": 90,
         "ROCKETGATE_PROTOCOL": "https",
