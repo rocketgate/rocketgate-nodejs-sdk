@@ -1,16 +1,16 @@
 {
     "serviceSettings": {
-        "ROCKETGATE_SERVLET": "/gateway/servlet/ServiceDispatcherAccess",
+        "ROCKETGATE_SERVLET": "gateway/servlet/ServiceDispatcherAccess",
         "ROCKETGATE_CONNECT_TIMEOUT": 10,
         "ROCKETGATE_READ_TIMEOUT": 90,
         "ROCKETGATE_PROTOCOL": "https",
         "ROCKETGATE_PORTNO": "443",
-        "ROCKETGATE_USER_AGENT": "RG Client NodeJS K2.2",
+        "ROCKETGATE_USER_AGENT": "RG Client NodeJS",
         "LIVE_HOST": "gateway.rocketgate.com",
         "LIVE_HOST_16": "gateway-16.rocketgate.com",
         "LIVE_HOST_17": "gateway-17.rocketgate.com",
         "TEST_HOST": "dev-gateway.rocketgate.com",
-        "VERSION_NUMBER": "K2.2"
+        "VERSION_NUMBER": "K2.3"
     },
     "responseSettings": {
         "VERSION_INDICATOR": "version",
@@ -72,13 +72,6 @@
             "112": "Declined – Invalid Expiration",
             "113": "Declined – Bank Unavailable",
             "114": "Declined – AVS",
-            "107": "Declined Expired Card",
-            "108": "Declined – Call",
-            "109": "Declined – Pickup Card",
-            "110": "Declined – Excessive Use",
-            "111": "Declined – Invalid card",
-            "112": "Declined – Invalid Expiration",
-            "113": "Declined – Bank Unavailable",
             "117": "Declined – AVS",
             "123": "Declined – User Declined",
             "150": "Declined – AVS",
