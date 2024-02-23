@@ -1,8 +1,8 @@
 {
     "serviceSettings": {
         "ROCKETGATE_SERVLET": "gateway/servlet/ServiceDispatcherAccess",
-        "ROCKETGATE_CONNECT_TIMEOUT": 10,
-        "ROCKETGATE_READ_TIMEOUT": 90,
+        "ROCKETGATE_CONNECT_TIMEOUT": 80,
+        "ROCKETGATE_READ_TIMEOUT": 5,
         "ROCKETGATE_PROTOCOL": "https",
         "ROCKETGATE_PORTNO": "443",
         "ROCKETGATE_USER_AGENT": "RG Client NodeJS",
@@ -10,7 +10,7 @@
         "LIVE_HOST_16": "gateway-16.rocketgate.com",
         "LIVE_HOST_17": "gateway-17.rocketgate.com",
         "TEST_HOST": "dev-gateway.rocketgate.com",
-        "VERSION_NUMBER": "K2.3"
+        "VERSION_NUMBER": "K2.4"
     },
     "responseSettings": {
         "VERSION_INDICATOR": "version",
