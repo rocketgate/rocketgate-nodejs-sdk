@@ -105,4 +105,22 @@ describe('perform rebill update', function() {
             });
         });
     });
+    it ('perform rebill update with amount', function (done) {
+        service.performPurchase(request, {}, function(results, request, response) {
+            // perform purchase then update
+            request = new Request();
+            request.merchantID = 1;
+            request.merchantPassword = "testpassword";
+            request.merchantCustomerID = time + ".JSTest";
+            request.merchantInvoiceID = time + ".Test";
+            request.amount = "4.55";
+            request.rebillFrequency = 'MONTHLY';
+
+            service.performRebillUpdate(request, {}, function(results, request, response) {
+                results.should.equal(true);
+                response[responseSettings.RESPONSE_CODE].should.equal('0');
+                done();
+            });
+        });
+    });
 });
