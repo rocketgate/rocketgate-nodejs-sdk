@@ -16,7 +16,7 @@ describe('perform auth only', function() {
         request.amount = "9.99";
         request.cardNo = "4111-1111-1111-1111";
         request.expireMonth = "02";
-        request.expireYear = "2025";
+        request.expireYear = "2029";
         request.cvv2 = "999";
         request.customerFirstName = "Joe";
         request.customerLastName = "JSTester";

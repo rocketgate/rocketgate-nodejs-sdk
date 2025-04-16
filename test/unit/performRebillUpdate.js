@@ -33,7 +33,7 @@ describe('perform rebill update', function() {
         request.amount = "5.55";
         request.cardNo = "4111-1111-1111-1111";
         request.expireMonth = "02";
-        request.expireYear = "2020";
+        request.expireYear = "2029";
         request.cvv2 = "999";
 
         service.setTestMode(true, function(err, result) {
@@ -105,7 +105,7 @@ describe('perform rebill update', function() {
             });
         });
     });
-    it ('perform rebill update with amount', function (done) {
+    it ('should perform rebill update with amount', function (done) {
         service.performPurchase(request, {}, function(results, request, response) {
             // perform purchase then update
             request = new Request();
