@@ -10,7 +10,7 @@
         "LIVE_HOST_16": "gateway-16.rocketgate.com",
         "LIVE_HOST_17": "gateway-17.rocketgate.com",
         "TEST_HOST": "dev-gateway.rocketgate.com",
-        "VERSION_NUMBER": "K2.4"
+        "VERSION_NUMBER": "K2.5"
     },
     "responseSettings": {
         "VERSION_INDICATOR": "version",
