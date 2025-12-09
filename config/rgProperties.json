@@ -10,7 +10,7 @@
         "LIVE_HOST_16": "gateway-16.rocketgate.com",
         "LIVE_HOST_17": "gateway-17.rocketgate.com",
         "TEST_HOST": "dev-gateway.rocketgate.com",
-        "VERSION_NUMBER": "K2.5"
+        "VERSION_NUMBER": "K2.6"
     },
     "responseSettings": {
         "VERSION_INDICATOR": "version",
@@ -33,6 +33,7 @@
         "CVV2_CODE": "cvv2Code",
         "EXCEPTION": "exception",
         "MERCHANT_ACCOUNT": "merchantAccount",
+        "PARTIAL_AUTH": "partialAuth",
         "PAY_TYPE": "payType",
         "PAY_HASH": "cardHash",
         "PAY_LAST_FOUR": "cardLastFour",
