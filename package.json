@@ -24,12 +24,11 @@
     ],
     "dependencies": {
         "async": "2.1.x",
+        "fast-xml-parser": "5.3.x",
         "is_js": "0.9.x",
-        "json2xml": "0.1.x",
         "moment": "2.15.x",
         "request": "2.76.x",
-        "urlencode": "1.1.x",
-        "xml2json": "0.10.x"
+        "urlencode": "1.1.x"
     },
     "devDependencies": {
         "eslint": "^3.17.1",
