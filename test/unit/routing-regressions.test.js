@@ -108,7 +108,8 @@ describe('Environment and routing regressions (unit)', function () {
 });
 
 describe('Routing validation and endpoint precedence (unit)', function () {
-    [true, {}, [], '0x1000000000000001', '10000000000000001', '100000000000000Z',
+    [true, {}, [], '', '1', '123', '10000000000000', '0x1000000000000001',
+        '10000000000000001', '100000000000000Z', 123, 10000000000000,
         9007199254740992, 1.5, -1].forEach(function (guid) {
         it('rejects malformed or imprecise GUID ' + JSON.stringify(guid), function () {
             var sdk = createSDK();
@@ -176,11 +177,14 @@ describe('Routing validation and endpoint precedence (unit)', function () {
         assert.ok(sdk.calls[0].body.indexOf('<referenceGUID>AFFFFFFFFFFFFFFF</referenceGUID>') !== -1);
     });
 
-    it('retains safe legacy numeric GUID input', function () {
-        var sdk = createSDK();
-        sdk.reply(fixtures.success);
-        fixtures.invoke(sdk, 'performVoid', { referenceGUID: 123 });
-        assert.strictEqual(sdk.calls[0].uri, 'https://gateway-1.rocketgate.com:443' + servlet);
+    [[100000000000001, 1], [1100000000000001, 17]].forEach(function (reference) {
+        it('retains safe legacy numeric GUID input with ' + String(reference[0]).length + ' digits', function () {
+            var sdk = createSDK();
+            sdk.reply(fixtures.success);
+            var result = fixtures.invoke(sdk, 'performVoid', { referenceGUID: reference[0] });
+            assert.strictEqual(result.result, true);
+            assert.strictEqual(sdk.calls[0].uri, 'https://gateway-' + reference[1] + '.rocketgate.com:443' + servlet);
+        });
     });
 
     it('overwrites a different referenceGUID with the cross-sell GUID for routing and serialization', function () {

@@ -91,7 +91,7 @@ describe('Environment and endpoint routing (unit)', function () {
         });
     });
 
-    it('routes a shorter legacy GUID using its single hexadecimal site digit', function () {
+    it('routes a 15-character GUID using its single hexadecimal site digit', function () {
         var sdk = createSDK();
         sdk.reply(fixtures.success);
         fixtures.invoke(sdk, 'performVoid', { referenceGUID: 'a00000000000001' });
