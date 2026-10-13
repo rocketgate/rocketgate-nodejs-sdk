@@ -328,6 +328,8 @@ function RocketgateAPI(options) {
             request[paramProp] = params[paramProp];
         }
 
+        // The legacy shortcut configures the shared service. Omitted or falsy
+        // values leave its existing environment unchanged.
         if (params.testMode) {
             Service.setTestMode(true, function (err, result) {
                 callback(err, request);
