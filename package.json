@@ -1,8 +1,18 @@
 {
     "name": "rocketgate-sdk",
     "version": "1.1.0",
-    "description": "SDK for the Rocketgate Payment Gateway",
+    "description": "SDK for the RocketGate Payment Gateway",
     "main": "index.js",
+    "files": [
+        "index.js",
+        "lib/",
+        "config/config.js",
+        "config/rgProperties.json",
+        "CHANGELOG.md"
+    ],
+    "engines": {
+        "node": ">=16"
+    },
     "author": "RocketGate",
     "contributors": [
         {
@@ -15,7 +25,11 @@
         }
     ],
     "scripts": {
-        "test": "nyc --reporter=html --reporter=text --check-coverage --lines=77 --statements=77 mocha --timeout 5000"
+        "test": "nyc --hook-run-in-context --reporter=html --reporter=text --check-coverage --lines=77 --statements=77 node scripts/test-unit.js",
+        "test:integration": "nyc --reporter=html --reporter=text --check-coverage --lines=77 --statements=77 node node_modules/mocha/bin/_mocha --opts test/integration/mocha.opts --timeout 5000 test/integration"
+    },
+    "nyc": {
+        "include": ["index.js", "lib/**/*.js", "config/config.js"]
     },
     "keywords": [
         "rocketgate",
@@ -23,10 +37,8 @@
         "payment"
     ],
     "dependencies": {
-        "async": "2.1.x",
-        "fast-xml-parser": "5.3.x",
-        "is_js": "0.9.x",
-        "moment": "2.15.x",
+        "async": "~2.6.4",
+        "fast-xml-parser": "~5.11.2",
         "request": "2.76.x",
         "urlencode": "1.1.x"
     },
@@ -36,7 +48,6 @@
         "eslint-plugin-security": "^1.3.0",
         "mocha": "^3.5.3",
         "nyc": "^10.1.2",
-        "should": "^11.2.1",
-        "supertest": "^3.0.0"
+        "should": "^11.2.1"
     }
 }
