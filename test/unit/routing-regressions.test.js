@@ -232,8 +232,8 @@ describe('Routing validation and endpoint precedence (unit)', function () {
                 var sdk = createSDK();
                 var result = fixtures.invoke(sdk, method, { gatewayURL: url, referenceGUID: '1000000000000001' });
                 assert.strictEqual(result.result, false);
-                assert.strictEqual(result.response.responseCode, '3');
-                assert.strictEqual(result.response.reasonCode, '304');
+                assert.strictEqual(result.response.responseCode, '4');
+                assert.strictEqual(result.response.reasonCode, '401');
                 assert.strictEqual(result.response.exception, 'Invalid gateway URL');
                 assert.strictEqual(sdk.calls.length, 0);
                 assert.strictEqual(sdk.dnsCalls.length, 0);

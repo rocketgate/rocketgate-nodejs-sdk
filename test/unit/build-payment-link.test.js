@@ -45,7 +45,8 @@ describe('Embedded fields payment links (unit)', function () {
         var sdk = createSDK();
         var result = fixtures.invoke(sdk, 'buildPaymentLink', { embeddedFieldsToken: 'invalid token' });
         assert.strictEqual(result.result, false);
-        assert.strictEqual(result.response.reasonCode, '304');
+        assert.strictEqual(result.response.responseCode, '4');
+        assert.strictEqual(result.response.reasonCode, '401');
         assert.strictEqual(sdk.calls.length, 0);
     });
 });
